@@ -1,0 +1,9 @@
+<table>
+    {% for r in reservations %}
+    <tr>
+    <td>{{ r.checkin }}</td>
+    <td>{{ r.checkout }}</td>
+    <td>{{ r.rental_id_id }}</td>
+    </tr>
+    {% endfor %}
+</table>
