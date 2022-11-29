@@ -27,3 +27,15 @@ To run this projects locally
 
 - see results
    open browser at http://127.0.0.1:8000/reservations/
+
+## Possible Improvements
+
+- Change db to another db that won't have the same locking issues as sqllite something like postgres
+
+- Possible pagination for fetching on reservations in views
+
+- More Meta data like constraints on Models
+
+- Larger fixtures with more data to cover more use cases
+
+- Improve visuals on template
