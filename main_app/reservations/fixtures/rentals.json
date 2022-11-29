@@ -3,22 +3,22 @@
         "model": "reservations.rental",
         "pk": 1,
         "fields": {
-            "name": "Olso"
+            "name": "Test1"
         }
     },
     {
         "model": "reservations.rental",
         "pk": 2,
         "fields": {
-            "name": "Helsinki"
+            "name": "Test2"
         }
     },
     {
         "model": "reservations.reservation",
         "pk": 1,
         "fields": {
-            "checkin": "2011-01-01",
-            "checkout": "2011-02-01",
+            "checkin": "3000-01-01",
+            "checkout": "3000-02-01",
             "rental": 1
         }
     },
@@ -26,8 +26,8 @@
         "model": "reservations.reservation",
         "pk": 2,
         "fields": {
-            "checkin": "2011-02-02",
-            "checkout": "2011-03-02",
+            "checkin": "3000-02-02",
+            "checkout": "3000-03-02",
             "rental": 1
         }
     },
@@ -35,8 +35,8 @@
         "model": "reservations.reservation",
         "pk": 3,
         "fields": {
-            "checkin": "2011-03-03",
-            "checkout": "2011-04-03",
+            "checkin": "3000-03-03",
+            "checkout": "3000-04-03",
             "rental": 1
         }
     },
@@ -44,8 +44,8 @@
         "model": "reservations.reservation",
         "pk": 4,
         "fields": {
-            "checkin": "2011-01-01",
-            "checkout": "2011-02-01",
+            "checkin": "3000-01-01",
+            "checkout": "3000-02-01",
             "rental": 2
         }
     },
@@ -53,8 +53,8 @@
         "model": "reservations.reservation",
         "pk": 5,
         "fields": {
-            "checkin": "2011-02-02",
-            "checkout": "2011-03-02",
+            "checkin": "3000-02-02",
+            "checkout": "3000-03-02",
             "rental": 2
         }
     },
@@ -62,8 +62,8 @@
         "model": "reservations.reservation",
         "pk": 6,
         "fields": {
-            "checkin": "2011-03-03",
-            "checkout": "2011-04-03",
+            "checkin": "3000-03-03",
+            "checkout": "3000-04-03",
             "rental": 2
         }
     }
