@@ -20,17 +20,8 @@ class TestReservation(TestCase):
     """
         Tests to reservation functionality
     """
+    fixtures = ['rentals.json']
 
-    def setUp(self):
-        rental_1 = Rental.objects.create(name="Test1")
-        rental_2 = Rental.objects.create(name="Test2")
-
-        Reservation.objects.create(checkin="2011-01-01", checkout="2011-02-01",rental=rental_1)
-        Reservation.objects.create(checkin="2011-02-02", checkout="2011-03-02",rental=rental_1)
-        Reservation.objects.create(checkin="2011-03-03", checkout="2011-04-03",rental=rental_1)
-        Reservation.objects.create(checkin="2011-01-01", checkout="2011-02-01",rental=rental_2)
-        Reservation.objects.create(checkin="2011-02-02", checkout="2011-03-02",rental=rental_2)
-        Reservation.objects.create(checkin="2011-03-03", checkout="2011-04-03",rental=rental_2)
 
     def test_rental_name(self):
         reservation = Reservation.objects.first()
