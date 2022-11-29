@@ -8,7 +8,6 @@ from .models import Reservation
 
 def index(request):
     reservation_list = Reservation.objects.all()
-    #import code; code.interact(local=dict(globals(), **locals()))
     template = loader.get_template('reservations.html')
     context = {
         'reservations': reservation_list,
