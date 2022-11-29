@@ -1,0 +1,70 @@
+[
+    {
+        "model": "reservations.rental",
+        "pk": 1,
+        "fields": {
+            "name": "Olso"
+        }
+    },
+    {
+        "model": "reservations.rental",
+        "pk": 2,
+        "fields": {
+            "name": "Helsinki"
+        }
+    },
+    {
+        "model": "reservations.reservation",
+        "pk": 1,
+        "fields": {
+            "checkin": "2011-01-01",
+            "checkout": "2011-02-01",
+            "rental": 1
+        }
+    },
+    {
+        "model": "reservations.reservation",
+        "pk": 2,
+        "fields": {
+            "checkin": "2011-02-02",
+            "checkout": "2011-03-02",
+            "rental": 1
+        }
+    },
+    {
+        "model": "reservations.reservation",
+        "pk": 3,
+        "fields": {
+            "checkin": "2011-03-03",
+            "checkout": "2011-04-03",
+            "rental": 1
+        }
+    },
+    {
+        "model": "reservations.reservation",
+        "pk": 4,
+        "fields": {
+            "checkin": "2011-01-01",
+            "checkout": "2011-02-01",
+            "rental": 2
+        }
+    },
+    {
+        "model": "reservations.reservation",
+        "pk": 5,
+        "fields": {
+            "checkin": "2011-02-02",
+            "checkout": "2011-03-02",
+            "rental": 2
+        }
+    },
+    {
+        "model": "reservations.reservation",
+        "pk": 6,
+        "fields": {
+            "checkin": "2011-03-03",
+            "checkout": "2011-04-03",
+            "rental": 2
+        }
+    }
+]
