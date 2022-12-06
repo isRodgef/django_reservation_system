@@ -48,3 +48,5 @@ first() - limit 1
 This allows allow my db to do all the filtering operations as well as lowering the amount of data I read from the db.
 
 I also cleaned up the if statement and put it in the return statement 
+
+Addional options to improving the function is somehow caching the answers but for simplicity I focused on fixing the sql query being used.
