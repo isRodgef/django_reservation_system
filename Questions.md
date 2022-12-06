@@ -37,7 +37,7 @@ The sql statement for this functions may perform similar operations to
     limit 1
 ```
 
-This only selects the rental field from the table after checking the reservatsions that occur before the current reservation but also orders them from highest to lowest and then limiting it to 1 item and picking the first item
+This only selects the rental field from the table after checking the reservatsions that occur before the current reservation but also orders them from highest to lowest and then limiting it to 1 item hence picking the first item.
 
 Here is a quick mapping of what the addition chained functions do,
 
