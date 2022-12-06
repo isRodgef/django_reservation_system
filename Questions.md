@@ -20,7 +20,7 @@ The sql  statement for this functions may perform similar operations to
 This give rise to a few inefficiencies because I am fetching all reservatsions that occur before the current reservation even though I only need the preceeding one.
 
 
-I reworked it and made if look as follows
+I can rework it and make it look as follows
 
 ```
    def get_prev_reservation_id(self):
