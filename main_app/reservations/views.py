@@ -7,7 +7,7 @@ from .models import Reservation
 # Create your views here.
 
 def index(request):
-    reservation_list = Reservation.objects.all()
+    reservation_list = Reservation.get_reservations()
     template = loader.get_template('reservations.html')
     context = {
         'reservations': reservation_list,
