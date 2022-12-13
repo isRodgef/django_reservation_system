@@ -1,5 +1,4 @@
 from django.db import models
-
 # Create your models here.
 
 class Rental(models.Model):
@@ -13,11 +12,18 @@ class Reservation(models.Model):
     checkout = models.DateField()
     rental = models.ForeignKey(Rental, on_delete=models.CASCADE)
 
-    def get_prev_reservation_id(self):
-        last_reserved = Reservation.objects.filter(rental=self.rental, id__lt=self.id)
-        if last_reserved:
-            return last_reserved[len(last_reserved) - 1].id
-        return "--"
+    @staticmethod
+    def get_reservations():
+        previous_reservation_id = models.Subquery(
+            Reservation.objects.filter(
+                rental=models.OuterRef("rental"), id__lt=models.OuterRef("id")
+            ).order_by("-id").only("id").values("id")
+        )
+
+        reservations = Reservation.objects.annotate(
+            previous_reservation_id=previous_reservation_id
+        )
+        return reservations
 
     class Meta:
         ordering = ["rental_id"]
