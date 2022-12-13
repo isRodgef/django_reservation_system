@@ -14,7 +14,7 @@ To run this projects locally
     `source env/bin/activate`
 
 - install dependencies 
-    `pip install -r requirements`
+    `pip install -r requirements.txt`
 
 - go into main_app director
     `cd main_app`
@@ -23,7 +23,10 @@ To run this projects locally
     `python manage.py migrate`
 
 - seed project with test data
-    `python manage.py loadata reservations/fixtures/rentals.json`
+    `python manage.py loaddata reservations/fixtures/rentals.json`
+
+- run dev server
+    `python manage.py runserver`
 
 - see results
    open browser at http://127.0.0.1:8000/reservations/
