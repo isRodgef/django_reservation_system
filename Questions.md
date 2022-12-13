@@ -25,7 +25,7 @@ I can rework it and make it look as follows
 ```
    def get_prev_reservation_id(self):
         last_reserved = Reservation.objects.filter(rental=self.rental,id__lt=self.id).order_by("-id").only("id").first()
-        return last_reserved.id if last_reserved else "--
+        return last_reserved.id if last_reserved else "--"
 
 ```
 
