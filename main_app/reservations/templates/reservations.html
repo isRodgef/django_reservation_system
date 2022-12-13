@@ -13,7 +13,11 @@
                 <td>{{ r.rental_id}}</td>
                 <td>{{ r.checkin }}</td>
                 <td>{{ r.checkout }}</td>
-                <td>{{ r.get_prev_reservation_id }}</td>
+                {% if r.previous_reservation_id %}
+                    <td>{{ r.previous_reservation_id }}</td>
+                {% else %}
+                    <td> -- </td>
+                {% endif %}
             </tr>
         {% endfor %}
     </tbody>
