@@ -17,10 +17,10 @@ class Reservation(models.Model):
         previous_reservation_id = models.Subquery(
             Reservation.objects.filter(
                 rental=models.OuterRef("rental"), id__lt=models.OuterRef("id")
-            ).order_by("-id").only("id").values("id")
+            ).order_by("-id").only("id").values("id")[:1]
         )
 
-        reservations = Reservation.objects.annotate(
+        reservations = Reservation.objects.select_related('rental').annotate(
             previous_reservation_id=previous_reservation_id
         )
         return reservations
