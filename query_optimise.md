@@ -34,6 +34,7 @@ Instead of making one query in the view ( to fetch all resersevations) and one q
 
 Full query looks as follows (got this by printing out the reservations query in the models file)
 
+```
 SELECT 
     "reservations_reservation"."id", "reservations_reservation"."checkin",   "reservations_reservation"."checkout", "reservations_reservation"."rental_id", 
     (
@@ -46,6 +47,7 @@ SELECT
         AS 
     "previous_reservation_id" 
     FROM "reservations_reservation" ORDER BY "reservations_reservation"."rental_id" ASC
+```
 
 The main reason for using this approach is that all the filtering, sorting and labeling (annotation for previous_reservation_id for example) is done on the database side. 
 
