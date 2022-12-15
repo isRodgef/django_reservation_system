@@ -12,16 +12,17 @@ class Reservation(models.Model):
     checkout = models.DateField()
     rental = models.ForeignKey(Rental, on_delete=models.CASCADE)
 
-    @staticmethod
-    def get_reservations():
+    @classmethod
+    def get_reservations(cls):
         previous_reservation_id = models.Subquery(
             Reservation.objects.filter(
                 rental=models.OuterRef("rental"), id__lt=models.OuterRef("id")
-            ).order_by("-id").only("id").values("id")[:1]
+            ).order_by("-id").values("id")[:1]
         )
 
-        reservations = Reservation.objects.select_related('rental').annotate(
+        reservations = Reservation.objects.annotate(
             previous_reservation_id=previous_reservation_id
+
         )
         return reservations
 
