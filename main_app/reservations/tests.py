@@ -22,17 +22,19 @@ class TestReservation(TestCase):
     """
     fixtures = ['rentals.json']
 
-
     def test_rental_name(self):
         reservation = Reservation.objects.first()
         self.assertEqual(reservation.rental.name, "Test1")
 
         reservation = Reservation.objects.last()
         self.assertEqual(reservation.rental.name, "Test2")
-        
-    def test_prev_reservations(self):
-        reservation = Reservation.objects.last()
-        self.assertEqual(reservation.get_prev_reservation_id(), 5)
 
-        reservation = Reservation.objects.first()
-        self.assertEqual(reservation.get_prev_reservation_id(), "--")
+    def test_prev_reservations(self):
+        reservations = Reservation.get_reservations()
+
+        first_reservation = reservations.first()
+        self.assertEqual(first_reservation.previous_reservation_id, None)
+
+        last_reservation = reservations.last()
+        self.assertEqual(last_reservation.previous_reservation_id, 5)
+
